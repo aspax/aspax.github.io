@@ -3,7 +3,3 @@ author:
   email:  ionut.florescu@gmail.com
   github: icflorescu
 
-markdown: redcarpet
-
-redcarpet:
-  extensions: [with_toc_data, no_intra_emphasis, autolink]

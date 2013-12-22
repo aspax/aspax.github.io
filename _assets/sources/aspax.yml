@@ -1,6 +1,6 @@
-css/aspax.css|fp|min:
+css/main.css|fp|min:
   - lib/icomoon/style.css
-  - styles/aspax.styl
+  - styles/main.styl
 
 img/logo.png|fp:     images/logo.png
 img/asphalt.png|fp:  images/asphalt.png
