@@ -29,7 +29,7 @@ That's it. No complicated `.initConfig()`, no redundant code to describe tasks i
 
 ***
 
-This documentation is still work-in-progress...
+This documentation is still work-in-progress&hellip;
 
 ***
 
