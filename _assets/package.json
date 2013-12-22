@@ -1,6 +1,6 @@
 {
-  "description": "We're just using this to manage ASPAx plugins",
+  "description": "We're just using this to manage ASPAX source handling plugins",
   "dependencies": {
-    "aspax-contrib-styl": "git://github.com/icflorescu/aspax-contrib-styl"
+    "aspax-styl-handler": "aspax-styl-handler"
   }
 }

@@ -25,38 +25,65 @@ What if you could watch, compile, concatenate, minify, compress and fingerprint 
     fonts/bs-glyphs.ttf|fp|gz: lib/bootstrap/fonts/glyphicons-halflings-regular.ttf
     fonts/bs-glyphs.woff|fp:   lib/bootstrap/fonts/glyphicons-halflings-regular.woff
 
-That's it. No `initConfig()`, no complicated and redundant JavaScript or CoffeeScript code!...
+That's it. No complicated `.initConfig()`, no redundant code to describe tasks in JavaScript or CoffeeScript, just a simple YML file in your assets folder.
 
 ***
 
-By looking at a simple file named `aspax.yml` in the root of your assets folder, ASPAX CLI will:
+This documentation is still work-in-progres...
+
+***
+
+By looking at that file, ASPAX will:
 
 - watch the folder and rebuild **just the necessary files** on changes;
-- copy/rename or (compile + concatenate) files in **development mode**;
-- copy/rename or (compile + concatenate + minify + compress + fingerprint) files for **production deployments**.
+- compile, concatenate and copy files in development mode;
+- compile, concatenate, minify, compress, fingerprint and copy files in production mode.
 
-## Installing ASPAX
-You'll most likely want ASPAX CLI installed as a global npm module:
+## Installation
+Most likely you'll want ASPAX installed as a global module:
 
     npm install aspax -g
 
-## Installing source handling plugins
+## Source handlers
 To keep the global CLI module lightweight and dependency-free, ASPAX is using a plugin system to handle different source types such as CoffeeScript, LiveScript, client-side Jade templates, Stylus or LESS files, etc.
 
-When processing JS/CSS asset sources, ASPAX will look for plugins in `./node_modules`, so you'll have to install the necessary plugins:
+ASPAX will look for plugins in `./node_modules` folder, so you'll have to install the necessary source handlers like this:
 
-    npm install aspax-contrib-coffee
+    npm install aspax-coffee-handler --save-dev
 
-If you're running `aspax` in the root folder of a Node.js application, it's a good idea to use the `--save-dev` option to avoid deploying the unnecessary npms on your production server:
+If you're running ASPAX in a Node.js application root folder, consider using the `--save-dev` option to avoid deploying the plugins to your production environment:
 
-    npm install aspax-contrib-coffee --save-dev
+    npm install aspax-coffee-handler --save-dev
 
-See a list of [available source plugins](#available_source_plugins) below.
+### Available source handlers
+So far:
 
-## How to use
-Type `aspax --help` to see all the available options and actions.
+- [aspax-coffee-handler](http://github.com/icflorescu/aspax-coffee-handler) for [CoffeeScript](http://coffeescript.org);
+- [aspax-iced-handler](http://github.com/icflorescu/aspax-iced-handler) for [IcedCoffeeScript](http://maxtaco.github.io/coffee-script);
+- [aspax-ls-handler](http://github.com/icflorescu/aspax-ls-handler) for [LiveScript](http://livescript.net);
+- [aspax-jade-handler](http://github.com/icflorescu/aspax-jade-handler) for client-side [Jade](http://jade-lang.com) templates;
+- [aspax-styl-handler](http://github.com/icflorescu/aspax-styl-handler) for [Stylus](http://learnboost.github.io/stylus);
+- [aspax-less-handler](http://github.com/icflorescu/aspax-less-handler) for [LESS](http://lesscss.org).
 
-Here are just a few examples:
+If you need something else, please let me know and maybe I can do it, or better yet, feel free to do it yourself and notify me so I can list it here.
+
+### Developing additional source handlers
+Each source handler npm should be named 'aspax-xyz-handler', where 'xyz' is the file extension it refers to.
+
+Each npm should export a `compile()` method with this signature (see example [here](https://github.com/icflorescu/aspax-coffee-handler/blob/master/plugin.coffee)):
+
+    exports.compile = function(file, flags, callback) {
+      ...
+    };
+
+...and optionally a `findImports()` method to recursively find imported/referred files (see examples [here](https://github.com/icflorescu/aspax-less-handler/blob/master/plugin.iced)) and [here](https://github.com/icflorescu/aspax-jade-handler/blob/master/plugin.iced)):
+
+    exports.findImports = function(imports, file, callback) {
+      ...
+    };
+
+## Usage
+CLI usage samples:
 
     # watch and build on-the-fly during development
     aspax -s ../assets watch
@@ -70,10 +97,29 @@ Here are just a few examples:
     # clean everything
     aspax -s ../client clean
 
-## File syntax
+Type `aspax --help` in the console to see more info:
 
-### Fingerprinting, minifying and compressing
-Just add the appropriate **flags** after the asset file name in `aspax.yml`:
+    Usage: aspax -s <source> [-d <destination>] [-p <public>] [-o <aspax.json>] [watch|clean|build|pack]
+
+    Options:
+
+      -h, --help               output usage information
+      -V, --version            output the version number
+      -s, --src <source>       Assets source folder
+      -d, --dst <destination>  Assets destination folder, defaults to public in current folder
+      -p, --pfx <prefix>       Assets destination prefix, defaults to /
+      -o, --out <aspax.json>   Output map in json or yml format, defaults to aspax.json in current folder
+
+### Using assets built and packaged by ASPAX in an Express.js application
+See [aspax-express](http://github.com/icflorescu/aspax-express) - there's a nice step-by-step guide in the project readme.
+
+In addition, you can have a look at [this demo repository](https://github.com/icflorescu/aspax-demo) to see a ready-made setup.
+
+## Config file syntax
+The syntax of `aspax.yml` should be quite simple and human-friendly. Here are just a few tips:
+
+### Marking assets for fingerprinting, minifying and compressing
+Just add the appropriate **flags** after the asset file name (the order is irrelevant):
 
                 ┌─────────────┐
               ┌─┤ fingerprint │
@@ -88,20 +134,19 @@ Just add the appropriate **flags** after the asset file name in `aspax.yml`:
     js/app.js|fp|min|gz:
       - ...
 
-The **flags** will have no effect in development mode, but here's what happens when running ASPAX in production mode:
+The **flags** will have no effect in development mode, but in production:
 
-- marking an asset for fingerprinting will add a UNIX timestamp like `-1387239833024` before its extension;
-- marking an asset for minifying will process it with [UglifyJS2](https://github.com/mishoo/UglifyJS2)/[CSS-optimizer](https://github.com/css/csso) and will also add `.min` before the asset extensions;
-- marking an asset for compression will gzip it and also add a `.gz` suffix to its name (all contemporary browsers are accepting gzipped files).
+- marking an asset for fingerprinting will add an UNIX timestamp like `-1387239833024` before its extension;
+- marking an asset for minifying will process it with [UglifyJS2](https://github.com/mishoo/UglifyJS2)/[CSS-optimizer](https://github.com/css/csso) and will also add `.min` before the extension;
+- marking an asset for compression will gzip it and also add a `.gz` suffix to its name.
 
 Notes:
 
-- flags order is irrelevant;
 - fingerprinting and compressing will work for anything, while minifying only makes sense for JS and CSS files;
 - there's no point, of course, in trying to compress already compressed formats such as `.jpg`, `.png` or `.eot`.
 
-### Source plugin flags
-Some plugins are also accepting **flags** (i.e. `bare` for CoffeeScript files). Use the same syntax in `aspax.yml`:
+### Source handler flags
+Some source-handling plugins are also accepting **flags** (i.e. `bare` for CoffeeScript files). Use the same syntax:
 
        ┌─────────────────────┐
        │ compile without the │
@@ -113,33 +158,6 @@ Some plugins are also accepting **flags** (i.e. `bare` for CoffeeScript files). 
       - scripts/source.coffee|bare
       - ...
 
-## Available source plugins
-Here's what we have so far:
-
-- [aspax-contrib-coffee](http://github.com/icflorescu/aspax-contrib-coffee) for [CoffeeScript](http://coffeescript.org);
-- [aspax-contrib-iced](http://github.com/icflorescu/aspax-contrib-iced) for [IcedCoffeeScript](http://maxtaco.github.io/coffee-script);
-- [aspax-contrib-ls](http://github.com/icflorescu/aspax-contrib-ls) for [LiveScript](http://livescript.net);
-- [aspax-contrib-jade](http://github.com/icflorescu/aspax-contrib-jade) for client-side [Jade](http://jade-lang.com) templates;
-- [aspax-contrib-styl](http://github.com/icflorescu/aspax-contrib-styl) for [Stylus](http://learnboost.github.io/stylus);
-- [aspax-contrib-less](http://github.com/icflorescu/aspax-contrib-less) for [LESS](http://lesscss.org).
-
-If you feel something's missing, please feel free to contribute (i.e. [SASS and SCSS](http://sass-lang.com) would be nice) and notify me so I can list them here.
-
-## Developing additional source plugins
-Each plugin should be named `aspax-contrib-xyz`, where `xyz` is the source extension it refers to (i.e. `.styl` for Stylus files).
-
-Each npm should export a `compile()` method with this signature (see example [here](https://github.com/icflorescu/aspax-contrib-coffee/blob/master/plugin.coffee#L5)):
-
-    exports.compile = function(file, flags, callback) {
-      ...
-    };
-
-...and a `findImports()` method to recursively find imported/referred files **where applicable** (i.e. by looking for `@import` statements in LESS files (see example [here](https://github.com/icflorescu/aspax-contrib-less/blob/master/plugin.iced#L12)) or `include` statements in Jade (see example [here](https://github.com/icflorescu/aspax-contrib-jade/blob/master/plugin.iced#L11)):
-
-    exports.findImports = function(imports, file, callback) {
-      ...
-    };
-
 ## FAQ
 
 ### What's the meaning of the name?
@@ -147,20 +165,3 @@ Each npm should export a `compile()` method with this signature (see example [he
 
 ### So why writing ASPAX instead of just updating [ASPA](http://github.com/icflorescu/aspa)?
 ASPAX brings in some breaking changes by simplifying the YML file syntax and introducing a plugin system to handle various source files. Simply upgrading [ASPA](http://github.com/icflorescu/aspa) wouldn't be possible without annoying the happiness of too many users.
-
-### I need ASPAX to handle `.xyz` source files
-Let me know and maybe I can do it, or better yet, feel free to [contribute with a plugin](#developing_additional_source_plugins) and notify me, so I can list it in the [available source plugins](#available_source_plugins) section above.
-
-## Endorsing the author
-If you find this piece of software useful, please [![endorse](https://api.coderwall.com/icflorescu/endorsecount.png)](https://coderwall.com/icflorescu) me on Coderwall!
-
-## License
-(The MIT License)
-
-Copyright (c) 2013 Ionut-Cristian Florescu <ionut.florescu@gmail.com>
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the 'Software'), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
