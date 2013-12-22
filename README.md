@@ -3,4 +3,4 @@ aspax.github.io
 
 The simple Node.js asset packager.
 
-See the official website at [aspax.github.io](https://aspax.github.io).
+See the official website at [aspax.github.io](http://aspax.github.io).
