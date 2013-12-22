@@ -1,0 +1,6 @@
+{
+  "description": "We're just using this to manage ASPAx plugins",
+  "dependencies": {
+    "aspax-contrib-styl": "git://github.com/icflorescu/aspax-contrib-styl"
+  }
+}

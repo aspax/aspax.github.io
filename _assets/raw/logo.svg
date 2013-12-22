@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="326.51346"
+   height="131.20366"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="logo.svg"
+   inkscape:export-filename="/home/ionut/Work/aspax/website/_aspax/sources/images/logo.png"
+   inkscape:export-xdpi="89.940002"
+   inkscape:export-ydpi="89.940002">
+  <defs
+     id="defs4">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3793">
+      <stop
+         style="stop-color:#b40000;stop-opacity:1"
+         offset="0"
+         id="stop3795" />
+      <stop
+         style="stop-color:#7a0000;stop-opacity:1"
+         offset="1"
+         id="stop3797" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient3757">
+      <stop
+         style="stop-color:#cccccc;stop-opacity:1;"
+         offset="0"
+         id="stop3759" />
+      <stop
+         style="stop-color:#888888;stop-opacity:1;"
+         offset="1"
+         id="stop3761" />
+    </linearGradient>
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3757"
+       id="radialGradient3767"
+       cx="107.69249"
+       cy="194.41705"
+       fx="107.69249"
+       fy="194.41705"
+       r="86.327209"
+       gradientTransform="matrix(1.7492496,0,0,0.2091271,-209.94702,171.34509)"
+       gradientUnits="userSpaceOnUse" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3793"
+       id="radialGradient3799"
+       cx="95.938835"
+       cy="204.97952"
+       fx="95.938835"
+       fy="204.97952"
+       r="25.361509"
+       gradientTransform="matrix(1,0,0,1.1511299,-0.26405523,-29.132203)"
+       gradientUnits="userSpaceOnUse" />
+    <filter
+       inkscape:collect="always"
+       id="filter3857"
+       x="-0.039378189"
+       width="1.0787565"
+       y="-0.16348825"
+       height="1.3269765"
+       color-interpolation-filters="sRGB">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="3.0967765"
+         id="feGaussianBlur3859" />
+    </filter>
+    <filter
+       inkscape:collect="always"
+       id="filter3861"
+       x="-0.1433772"
+       width="1.2867544"
+       y="-0.12450264"
+       height="1.2490053"
+       color-interpolation-filters="sRGB">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="3.0967765"
+         id="feGaussianBlur3863" />
+    </filter>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#3f3f3f"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1"
+     inkscape:cx="-4.52284"
+     inkscape:cy="14.22377"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     fit-margin-top="30"
+     fit-margin-left="30"
+     fit-margin-right="30"
+     fit-margin-bottom="30"
+     inkscape:window-width="1631"
+     inkscape:window-height="1026"
+     inkscape:window-x="49"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(163.77685,-134.68724)">
+    <text
+       inkscape:export-ydpi="90.019257"
+       inkscape:export-xdpi="90.019257"
+       inkscape:export-filename="/home/ionut/Work/aspax/website/_aspax/sources/images/logo.png"
+       transform="scale(1.0723385,0.93254134)"
+       sodipodi:linespacing="125%"
+       id="text3801"
+       y="232.48083"
+       x="-119.79059"
+       style="font-size:58.67155838px;font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;filter:url(#filter3857);font-family:Orbitron;-inkscape-font-specification:Orbitron Medium"
+       xml:space="preserve"><tspan
+         style="font-size:58.67155838px;font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;font-family:Orbitron;-inkscape-font-specification:Orbitron Medium"
+         y="232.48083"
+         x="-119.79059"
+         id="tspan3803"
+         sodipodi:role="line">ASPA</tspan></text>
+    <text
+       transform="scale(1.0326368,0.9683947)"
+       sodipodi:linespacing="125%"
+       id="text3805"
+       y="232.97545"
+       x="59.531048"
+       style="font-size:71.64268494px;font-style:oblique;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;filter:url(#filter3861);font-family:Purisa;-inkscape-font-specification:Purisa Bold Oblique"
+       xml:space="preserve"><tspan
+         style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+         y="232.97545"
+         x="59.531048"
+         id="tspan3807"
+         sodipodi:role="line">X</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:58.67155838000000045px;font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:url(#radialGradient3767);fill-opacity:1;stroke:none;stroke-width:1;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;font-family:Orbitron;-inkscape-font-specification:Orbitron Medium"
+       x="-119.79059"
+       y="232.48083"
+       id="text2985"
+       sodipodi:linespacing="125%"
+       transform="scale(1.0723385,0.93254134)"
+       inkscape:export-filename="/home/ionut/Work/aspax/website/_aspax/sources/images/logo.png"
+       inkscape:export-xdpi="90.019257"
+       inkscape:export-ydpi="90.019257"><tspan
+         sodipodi:role="line"
+         id="tspan2987"
+         x="-119.79059"
+         y="232.48083"
+         style="font-size:58.67155838000000045px;font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:url(#radialGradient3767);fill-opacity:1;stroke:none;stroke-width:1;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;font-family:Orbitron;-inkscape-font-specification:Orbitron Medium">ASPA</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:71.64268494px;font-style:oblique;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:url(#radialGradient3799);fill-opacity:1;stroke:#aaaaaa;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;font-family:Purisa;-inkscape-font-specification:Purisa Bold Oblique"
+       x="59.531048"
+       y="232.97545"
+       id="text3781"
+       sodipodi:linespacing="125%"
+       transform="scale(1.0326368,0.9683947)"><tspan
+         sodipodi:role="line"
+         id="tspan3783"
+         x="59.531048"
+         y="232.97545"
+         style="fill:url(#radialGradient3799);fill-opacity:1;stroke:#aaaaaa;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none">X</tspan></text>
+  </g>
+</svg>

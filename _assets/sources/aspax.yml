@@ -1,0 +1,11 @@
+css/aspax.css|fp|min:
+  - lib/icomoon/style.css
+  - styles/aspax.styl
+
+img/logo.png|fp:     images/logo.png
+img/asphalt.png|fp:  images/asphalt.png
+
+fonts/icons.eot|fp:  lib/icomoon/fonts/icomoon.eot
+fonts/icons.svg|fp:  lib/icomoon/fonts/icomoon.svg
+fonts/icons.ttf|fp:  lib/icomoon/fonts/icomoon.ttf
+fonts/icons.woff|fp: lib/icomoon/fonts/icomoon.woff

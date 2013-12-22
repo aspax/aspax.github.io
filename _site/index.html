@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASPAX</title>
+    <meta name="description" content="The simplest Node.js asset packager">
+    <meta name="author" content="Ionut-Cristian Florescu">
+    <link rel="shortcut icon" href="/favicon.png">
+    <link href='//fonts.googleapis.com/css?family=Open+Sans|Ubuntu+Mono' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/assets/css/aspax-1387678052010.min.css">
+  </head>
+  <body>
+    <header>
+      <div class="wrapper inside-header">
+        <a class="logo" href="/" title="ASPAX">ASPAX</a>
+        <h1>The simple Node.js asset packager.</h1>
+        <ul class="menu">
+          <li class="menu-item">
+            <a class="menu-link" href="#" title="Plugins">
+              <i class="menu-icon icon-plugins"></i>
+              <span>Plugins</span>
+            </a>
+          </li>
+          <li class="menu-item">
+            <a class="menu-link" href="#" title="Tutorials">
+              <i class="menu-icon icon-tutorials"></i>
+              <span>Tutorials</span>
+            </a>
+          </li>
+          <li class="menu-item">
+            <a class="menu-link" href="https://github.com/icflorescu/aspax" title="View source on GitHub">
+              <i class="menu-icon icon-github"></i>
+              <span>Source</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </header>
+    <section class="wrapper">
+      <p>What if you could watch, compile, concatenate, minify, compress and fingerprint all your web assets using just a simple file written in clear, human-readable YML syntax?</p>
+
+<p>Like this:</p>
+
+<pre><code>js/app.js|fp|min|gz:
+  - lib/bootstrap/js/bootstrap.js
+  - lib/moment.js
+  - lib/jade/runtime.js
+  - scripts/namespaces.coffee|bare
+  - templates/item.jade
+  - scripts/index.ls|bare
+
+css/app.css|fp|min|gz:
+  - lib/bootstrap/css/bootstrap.css
+  - lib/bootstrap/css/bootstrap-theme.css
+  - styles/index.styl|nib
+
+favicon.png:               images/favicon.png
+
+fonts/bs-glyphs.eot|fp:    lib/bootstrap/fonts/glyphicons-halflings-regular.eot
+fonts/bs-glyphs.svg|fp|gz: lib/bootstrap/fonts/glyphicons-halflings-regular.svg
+fonts/bs-glyphs.ttf|fp|gz: lib/bootstrap/fonts/glyphicons-halflings-regular.ttf
+fonts/bs-glyphs.woff|fp:   lib/bootstrap/fonts/glyphicons-halflings-regular.woff</code></pre>
+
+<p>That’s it. No <code>initConfig()</code>, no complicated and redundant JavaScript or CoffeeScript code!</p>
+<hr />
+<p>By looking at a simple file named <code>aspax.yml</code> in the root of your assets folder, ASPAX CLI will:</p>
+
+<ul>
+<li>watch the folder and rebuild <strong>just the necessary files</strong> on changes;</li>
+
+<li>copy/rename or (compile + concatenate) files in <strong>development mode</strong>;</li>
+
+<li>copy/rename or (compile + concatenate + minify + compress + fingerprint) files for <strong>production deployments</strong>.</li>
+</ul>
+
+<h2 id="installing_aspax">Installing ASPAX</h2>
+
+<p>You’ll most likely want ASPAX CLI installed as a global npm module:</p>
+
+<pre><code>npm install aspax -g</code></pre>
+
+<h2 id="installing_plugins">Installing plugins</h2>
+
+<p>To keep the global CLI module lightweight and dependency-free, ASPAX is using a plugin system to handle different source types such as CoffeeScript, LiveScript, client-side Jade templates, Stylus or LESS files, etc.</p>
+
+<p>You’ll have to install the necessary source-handling plugins in the folder in which you’re running the CLI, like this:</p>
+
+<pre><code>npm install aspax-contrib-coffee</code></pre>
+
+<p>See a list of <a href="#available-plugins">available plugins</a> below.</p>
+
+<h2 id="how_to_use">How to use</h2>
+
+<p>Type <code>aspax --help</code> to see all the available options and actions.</p>
+
+<p>Here are just a few examples:</p>
+
+<pre><code># watch and build on-the-fly during development
+aspax -s ../assets watch
+
+# build for development
+aspax -s ../assets build
+
+# pack for production (will compile, concat, minify, compress and fingerprint)
+aspax -s ../assets pack
+
+# clean everything
+aspax -s ../client clean</code></pre>
+
+<h2 id="file_syntax">File syntax</h2>
+
+<h3 id="fingerprinting_minifying_and_compressing">Fingerprinting, minifying and compressing</h3>
+
+<p>Just add the appropriate <strong>flags</strong> after the asset file name in <code>aspax.yml</code>:</p>
+
+<pre><code>            ┌─────────────┐
+          ┌─┤ fingerprint │
+          │ └─────────────┘
+          │      ┌────────┐
+          │  ┌───┤ minify │
+          │  │   └────────┘
+          │  │     ┌──────┐
+          │  │   ┌─┤ gzip │
+          │  │   │ └──────┘
+          ┴─ ┴── ┴─
+js/app.js|fp|min|gz:
+  - ...</code></pre>
+
+<p>The <strong>flags</strong> will have no effect in development mode, but in production:</p>
+
+<ul>
+<li>marking an asset for fingerprinting will add an UNIX timestamp like <code>-1387239833024</code> before its extension.</li>
+
+<li>marking an asset for minifying will process it with <a href="https://github.com/mishoo/UglifyJS2">UglifyJS2</a>/<a href="https://github.com/css/csso">CSS-optimizer</a> and will also add <code>.min</code> before the asset extensions;</li>
+
+<li>marking an asset for compression will gzip it and also add a <code>.gz</code> suffix to its name (all contemporary browsers are accepting gzipped files).</li>
+</ul>
+
+<p>Notes:</p>
+
+<ul>
+<li>flags order is irrelevant;</li>
+
+<li>fingerprinting and compressing will work for anything, while minifying only makes sense for JS and CSS files;</li>
+
+<li>there’s no point, of course, in trying to compress already compressed formats such as <code>.jpg</code>, <code>.png</code> or <code>.eot</code>.</li>
+</ul>
+
+<h3 id="source_plugin_flags">Source plugin flags</h3>
+
+<p>Some plugins are also accepting <strong>flags</strong> (i.e. <code>bare</code> for CoffeeScript files). Use the same syntax in <code>aspax.yml</code>:</p>
+
+<pre><code>   ┌─────────────────────┐
+   │ compile without the │
+   │ top-level function  ├──┐
+   │ safety wrapper      │  │
+   └─────────────────────┘  │
+                            │
+  - ...                   ──┴─
+  - scripts/source.coffee|bare
+  - ...</code></pre>
+
+<h2 id="available_plugins">Available plugins</h2>
+
+<p>When processing JS/CSS asset sources, ASPAx will look for plugins in <code>./node_modules</code>. Since you’ll usually be running <code>aspax</code> in the web application folder, it’s a good idea to install the necessary plugins like this <code>npm install aspax-contrib-coffee --save-dev</code>.</p>
+
+<p>So far the avaiable plugins are:</p>
+
+<ul>
+<li><a href="http://github.com/icflorescu/aspax-contrib-coffee">aspax-contrib-coffee</a> for <a href="http://coffeescript.org">CoffeeScript</a>;</li>
+
+<li><a href="http://github.com/icflorescu/aspax-contrib-iced">aspax-contrib-iced</a> for <a href="http://maxtaco.github.io/coffee-script">IcedCoffeeScript</a>;</li>
+
+<li><a href="http://github.com/icflorescu/aspax-contrib-ls">aspax-contrib-ls</a> for <a href="http://livescript.net">LiveScript</a>;</li>
+
+<li><a href="http://github.com/icflorescu/aspax-contrib-jade">aspax-contrib-jade</a> for client-side <a href="http://jade-lang.com">Jade</a> templates;</li>
+
+<li><a href="http://github.com/icflorescu/aspax-contrib-styl">aspax-contrib-styl</a> for <a href="http://learnboost.github.io/stylus">Stylus</a>;</li>
+
+<li><a href="http://github.com/icflorescu/aspax-contrib-less">aspax-contrib-less</a> for <a href="http://lesscss.org">LESS</a>.</li>
+</ul>
+
+<p>If you need something else, please feel free to contribute with additional plugins (i.e. <a href="http://sass-lang.com">SASS and SCSS</a>) and notify me so I can list them here.</p>
+
+<h2 id="developing_additional_plugins">Developing additional plugins</h2>
+
+<p>Each plugin should be named ‘aspax-contrib-xyz’, where ‘xyz’ is the source extension (i.e. ‘.styl’ for Stylus files) it refers to.</p>
+
+<p>Each plugin module should export a <code>compile()</code> method with this signature (see example <a href="https://github.com/icflorescu/aspax-contrib-coffee/blob/master/plugin.coffee#L5">here</a>):</p>
+
+<pre><code>exports.compile = function(file, flags, callback) {
+  ...
+};</code></pre>
+
+<p>…and a <code>findImports()</code> method to recursively find imported/referred files <strong>where applicable</strong> (i.e. by looking for <code>@import</code> statements in LESS files (like <a href="https://github.com/icflorescu/aspax-contrib-less">this one</a>) or <code>include</code> statements in Jade (like <a href="https://github.com/icflorescu/aspax-contrib-jade">this one</a>):</p>
+
+<pre><code>exports.findImports = function(imports, file, callback) {
+  ...
+};</code></pre>
+
+<p>Look at the available plugins above for detailed examples.</p>
+
+<h2 id="faq">FAQ</h2>
+
+<h3 id="why_is_it_called_aspax">Why is it called ASPAX?</h3>
+
+<p><strong>AS</strong>set <strong>PA</strong>ckager + <strong>X</strong> because this utility is an evolution of <a href="http://github.com/icflorescu/aspa">ASPA</a>, a similar module I’ve built in the past.</p>
+
+<h3 id="so_why_writing_aspax_instead_of_just_updating_aspa">So why writing ASPAX instead of just updating <a href="http://github.com/icflorescu/aspa">ASPA</a>?</h3>
+
+<p>ASPAX brings in some breaking changes by simplifying the YML file syntax and introducing a plugin system to handle various source files. Simply upgrading <a href="http://github.com/icflorescu/aspa">ASPA</a> wouldn’t be possible without annoying the happiness of too many users.</p>
+
+<h3 id="i_need_aspax_to_handle_xyz_source_files">I need ASPAX to handle .xyz source files</h3>
+
+<p>Let me know and maybe I can do it, or better yet, feel free to <a href="#developing-additional-plugins">contribute with a plugin</a> and notify me, so I can list it in the <a href="#available-plugins">available plugins</a> section above.</p>
+
+<h2 id="endorsing_the_author">Endorsing the author</h2>
+
+<p>If you find this piece of software useful, please <a href="https://coderwall.com/icflorescu"><img src="https://api.coderwall.com/icflorescu/endorsecount.png" alt="endorse" /></a> me on Coderwall!</p>
+
+<h2 id="license">License</h2>
+
+<p>(The MIT License)</p>
+
+<p>Copyright (c) 2013 Ionut-Cristian Florescu &lt;ionut.florescu@gmail.com&gt;</p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the ‘Software’), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED ‘AS IS’, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+    </section>
+    <footer>
+      <div class="wrapper">
+        Project hosted on <i class="icon-github"></i> <a href="https://github.com/icflorescu/aspax">GitHub</a> and maintained by <a href="https://github.com/icflorescu">Ionut-Cristian Florescu</a>.
+        <div class="platforms">
+          ASPAX works on <i class="icon-osx"></i> and <i class="icon-linux"></i>.
+        <div>
+      </div>
+    </footer>
+  </body>
+
+</html>
