@@ -3,6 +3,10 @@ css/main.css|fp|min:
   - lib/icomoon/style.css
   - styles/main.styl
 
+js/main.js|fp|min:
+  - lib/zepto.js
+  - scripts/main.ls|bare
+
 img/logo.png|fp:     images/logo.png
 img/asphalt.png|fp:  images/asphalt.png
 
