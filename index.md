@@ -96,7 +96,7 @@ exports.compile = function(file, flags, callback) {
 
 {% endhighlight %}
 
-...and optionally a `findImports()` method to recursively find imported/referred files (see examples [here](https://github.com/icflorescu/aspax-less-handler/blob/master/plugin.iced)) and [here](https://github.com/icflorescu/aspax-jade-handler/blob/master/plugin.iced)):
+...and optionally a `findImports()` method to recursively find imported/referred files (see examples [here](https://github.com/icflorescu/aspax-less-handler/blob/master/plugin.iced) and [here](https://github.com/icflorescu/aspax-jade-handler/blob/master/plugin.iced)):
 
 {% highlight js %}
 
