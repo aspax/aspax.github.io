@@ -186,7 +186,7 @@ Some source-handling plugins are also accepting **flags** (i.e. `bare` for Coffe
 
 {% highlight text %}
 
- ┌---------------------o
+ o---------------------o
  | compile without the |
  | top-level function  |--o
  | safety wrapper      |  |
