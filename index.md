@@ -5,25 +5,29 @@ description: The simplest Node.js asset packager
 ---
 What if you could watch, compile, concatenate, minify, compress and fingerprint all your web assets using just a simple file written in clear, human-readable YML syntax?
 
-    js/app.js|fp|min|gz:
-      - lib/bootstrap/js/bootstrap.js
-      - lib/moment.js
-      - lib/jade/runtime.js
-      - scripts/namespaces.coffee|bare
-      - templates/item.jade
-      - scripts/index.ls|bare
+{% highlight yaml %}
 
-    css/app.css|fp|min|gz:
-      - lib/bootstrap/css/bootstrap.css
-      - lib/bootstrap/css/bootstrap-theme.css
-      - styles/index.styl|nib
+js/app.js|fp|min|gz:
+  - lib/bootstrap/js/bootstrap.js
+  - lib/moment.js
+  - lib/jade/runtime.js
+  - scripts/namespaces.coffee|bare
+  - templates/item.jade
+  - scripts/index.ls|bare
 
-    favicon.png:               images/favicon.png
+css/app.css|fp|min|gz:
+  - lib/bootstrap/css/bootstrap.css
+  - lib/bootstrap/css/bootstrap-theme.css
+  - styles/index.styl|nib
 
-    fonts/bs-glyphs.eot|fp:    lib/bootstrap/fonts/glyphicons-halflings-regular.eot
-    fonts/bs-glyphs.svg|fp|gz: lib/bootstrap/fonts/glyphicons-halflings-regular.svg
-    fonts/bs-glyphs.ttf|fp|gz: lib/bootstrap/fonts/glyphicons-halflings-regular.ttf
-    fonts/bs-glyphs.woff|fp:   lib/bootstrap/fonts/glyphicons-halflings-regular.woff
+favicon.png:               images/favicon.png
+
+fonts/bs-glyphs.eot|fp:    lib/bootstrap/fonts/glyphicons-halflings-regular.eot
+fonts/bs-glyphs.svg|fp|gz: lib/bootstrap/fonts/glyphicons-halflings-regular.svg
+fonts/bs-glyphs.ttf|fp|gz: lib/bootstrap/fonts/glyphicons-halflings-regular.ttf
+fonts/bs-glyphs.woff|fp:   lib/bootstrap/fonts/glyphicons-halflings-regular.woff
+
+{% endhighlight %}
 
 That's it. No complicated `.initConfig()`, no redundant code to describe tasks in JavaScript or CoffeeScript, just a simple YML file in your assets folder.
 
@@ -42,18 +46,30 @@ By looking at that file, ASPAX will:
 ## Installation
 Most likely you'll want ASPAX installed as a global module:
 
-    npm install aspax -g
+{% highlight sh %}
+
+npm install aspax -g
+
+{% endhighlight %}
 
 ## Source handlers
 To keep the global CLI module lightweight and dependency-free, ASPAX is using a plugin system to handle different source types such as CoffeeScript, LiveScript, client-side Jade templates, Stylus or LESS files, etc.
 
 ASPAX will look for plugins in `./node_modules` folder, so you'll have to install the necessary source handlers like this:
 
-    npm install aspax-coffee-handler --save-dev
+{% highlight sh %}
+
+npm install aspax-coffee-handler --save-dev
+
+{% endhighlight %}
 
 If you're running ASPAX in a Node.js application root folder, consider using the `--save-dev` option to avoid deploying the plugins to your production environment:
 
-    npm install aspax-coffee-handler --save-dev
+{% highlight sh %}
+
+npm install aspax-coffee-handler --save-dev
+
+{% endhighlight %}
 
 ### Available source handlers
 So far:
@@ -72,43 +88,59 @@ Each source handler npm should be named 'aspax-xyz-handler', where 'xyz' is the 
 
 Each npm should export a `compile()` method with this signature (see example [here](https://github.com/icflorescu/aspax-coffee-handler/blob/master/plugin.coffee)):
 
-    exports.compile = function(file, flags, callback) {
-      ...
-    };
+{% highlight js %}
+
+exports.compile = function(file, flags, callback) {
+  ...
+};
+
+{% endhighlight %}
 
 ...and optionally a `findImports()` method to recursively find imported/referred files (see examples [here](https://github.com/icflorescu/aspax-less-handler/blob/master/plugin.iced)) and [here](https://github.com/icflorescu/aspax-jade-handler/blob/master/plugin.iced)):
 
-    exports.findImports = function(imports, file, callback) {
-      ...
-    };
+{% highlight js %}
+
+exports.findImports = function(imports, file, callback) {
+  ...
+};
+
+{% endhighlight %}
 
 ## Usage
 CLI usage samples:
 
-    # watch and build on-the-fly during development
-    aspax -s ../assets watch
+{% highlight sh %}
 
-    # build for development
-    aspax -s ../assets build
+# watch and build on-the-fly during development
+aspax -s ../assets watch
 
-    # pack for production (will compile, concat, minify, compress and fingerprint)
-    aspax -s ../assets pack
+# build for development
+aspax -s ../assets build
 
-    # clean everything
-    aspax -s ../client clean
+# pack for production (will compile, concat, minify, compress and fingerprint)
+aspax -s ../assets pack
+
+# clean everything
+aspax -s ../client clean
+
+{% endhighlight %}
 
 Type `aspax --help` in the console to see more info:
 
-    Usage: aspax -s <source> [-d <destination>] [-p <public>] [-o <aspax.json>] [watch|clean|build|pack]
+{% highlight text %}
 
-    Options:
+Usage: aspax -s <source> [-d <destination>] [-p <public>] [-o <aspax.json>] [watch|clean|build|pack]
 
-      -h, --help               output usage information
-      -V, --version            output the version number
-      -s, --src <source>       Assets source folder
-      -d, --dst <destination>  Assets destination folder, defaults to public in current folder
-      -p, --pfx <prefix>       Assets destination prefix, defaults to /
-      -o, --out <aspax.json>   Output map in json or yml format, defaults to aspax.json in current folder
+Options:
+
+  -h, --help               output usage information
+  -V, --version            output the version number
+  -s, --src <source>       Assets source folder
+  -d, --dst <destination>  Assets destination folder, defaults to public in current folder
+  -p, --pfx <prefix>       Assets destination prefix, defaults to /
+  -o, --out <aspax.json>   Output map in json or yml format, defaults to aspax.json in current folder
+
+{% endhighlight %}
 
 ### Using assets built and packaged by ASPAX in an Express.js application
 See [aspax-express](http://github.com/icflorescu/aspax-express) - there's a nice step-by-step guide in the project readme.
@@ -121,18 +153,22 @@ The syntax of `aspax.yml` should be quite simple and human-friendly. Here are ju
 ### Marking assets for fingerprinting, minifying and compressing
 Just add the appropriate **flags** after the asset file name (the order is irrelevant):
 
-                ┌─────────────┐
-              ┌─┤ fingerprint │
-              │ └─────────────┘
-              │      ┌────────┐
-              │  ┌───┤ minify │
-              │  │   └────────┘
-              │  │     ┌──────┐
-              │  │   ┌─┤ gzip │
-              │  │   │ └──────┘
-              ┴─ ┴── ┴─
-    js/app.js|fp|min|gz:
-      - ...
+{% highlight text %}
+
+            ┌─────────────┐
+          ┌─┤ fingerprint │
+          │ └─────────────┘
+          │      ┌────────┐
+          │  ┌───┤ minify │
+          │  │   └────────┘
+          │  │     ┌──────┐
+          │  │   ┌─┤ gzip │
+          │  │   │ └──────┘
+          ┴─ ┴── ┴─
+js/app.js|fp|min|gz:
+  - ...
+
+{% endhighlight %}
 
 The **flags** will have no effect in development mode, but in production:
 
@@ -148,15 +184,19 @@ Notes:
 ### Source handler flags
 Some source-handling plugins are also accepting **flags** (i.e. `bare` for CoffeeScript files). Use the same syntax:
 
-       ┌─────────────────────┐
-       │ compile without the │
-       │ top-level function  ├──┐
-       │ safety wrapper      │  │
-       └─────────────────────┘  │
-                                │
-      - ...                   ──┴─
-      - scripts/source.coffee|bare
-      - ...
+{% highlight text %}
+
+ ┌─────────────────────┐
+ │ compile without the │
+ │ top-level function  ├──┐
+ │ safety wrapper      │  │
+ └─────────────────────┘  │
+                          │
+- ...                   ──┴─
+- scripts/source.coffee|bare
+- ...
+
+{% endhighlight %}
 
 ## FAQ
 

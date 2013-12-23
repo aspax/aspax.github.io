@@ -1,0 +1,86 @@
+body
+  color #F0E7D5
+  background #252525 url('../images/asphalt.png')
+  font 16px/1.5em 'Open Sans', sans-serif
+  margin 0
+
+h2
+h3
+  font-weight normal
+  line-height 2em
+  margin 1em 0 -0.5em
+
+h2
+  font-size 200%
+  background-image radial-gradient(farthest-side at center top, rgba(black, 50%) -200%, transparent 100%)
+  &:before
+    content ''
+    display block
+    border-top 1px solid black
+    border-bottom 1px solid #666
+
+  &:first-child
+    background-image none
+    margin-top 0.25em
+    &:before
+      display none
+
+h3
+  font-size 150%
+  &:before
+    content ''
+    display block
+    height 2px
+    background transparent linear-gradient(-45deg, transparent 25%, #666 25%, #666 50%, transparent 50%, transparent 75%, #666 75%, #666 100%)
+    background-size 6px 6px
+
+hr
+  border none
+  height 6px
+  background transparent linear-gradient(-45deg, transparent 25%, #666 25%, #666 50%, transparent 50%, transparent 75%, #666 75%, #666 100%)
+  background-size 6px 6px
+
+code
+  color #C5C8C6
+  background #1D1F21
+  border 1px solid #444
+  border-radius 4px
+  padding 2px 4px
+
+pre
+  background #1D1F21
+  border-radius 4px
+  box-shadow 0 0 10px rgba(black, 80%) inset
+  padding 10px
+  overflow-x auto
+  > code
+    background transparent
+    border none
+    border-radius 0
+    padding 0
+
+a
+  &:link
+    color #F2B047
+    text-decoration none
+  &:visited
+    color #E06753
+  &:hover
+    text-decoration underline
+
+.group:after
+  content ''
+  display table
+  clear both
+
+.wrapper
+  margin 0 auto
+  width 920px
+  @media (max-width: 940px)
+    margin 0 10px
+    width auto
+
+@import 'header'
+@import 'footer'
+@import 'scrollbar'
+@import 'pygments-additions'
