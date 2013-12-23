@@ -31,17 +31,11 @@ fonts/bs-glyphs.woff|fp:   lib/bootstrap/fonts/glyphicons-halflings-regular.woff
 
 That's it. No complicated `.initConfig()`, no redundant code to describe tasks in JavaScript or CoffeeScript, just a simple YML file in your assets folder.
 
-***
-
-This documentation is still work-in-progress&hellip;
-
-***
-
 By looking at that file, ASPAX will:
 
 - watch the folder and rebuild **just the necessary files** on changes;
 - compile, concatenate and copy files in development mode;
-- compile, concatenate, minify, compress, fingerprint and copy files in production mode.
+- compile, concatenate, **minify**, **compress**, **fingerprint** and copy files in production mode.
 
 ## Installation
 Most likely you'll want ASPAX installed as a global module:
@@ -52,14 +46,14 @@ npm install aspax -g
 
 {% endhighlight %}
 
-## Source handlers
+## Plugins
 To keep the global CLI module lightweight and dependency-free, ASPAX is using a plugin system to handle different source types such as CoffeeScript, LiveScript, client-side Jade templates, Stylus or LESS files, etc.
 
 ASPAX will look for plugins in `./node_modules` folder, so you'll have to install the necessary source handlers like this:
 
 {% highlight sh %}
 
-npm install aspax-coffee-handler --save-dev
+npm install aspax-coffee-handler
 
 {% endhighlight %}
 
@@ -71,8 +65,8 @@ npm install aspax-coffee-handler --save-dev
 
 {% endhighlight %}
 
-### Available source handlers
-So far:
+### Available plugins
+So far, the available plugins are:
 
 - [aspax-coffee-handler](http://github.com/icflorescu/aspax-coffee-handler) for [CoffeeScript](http://coffeescript.org);
 - [aspax-iced-handler](http://github.com/icflorescu/aspax-iced-handler) for [IcedCoffeeScript](http://maxtaco.github.io/coffee-script);
@@ -83,10 +77,10 @@ So far:
 
 If you need something else, please let me know and maybe I can do it, or better yet, feel free to do it yourself and notify me so I can list it here.
 
-### Developing additional source handlers
-Each source handler npm should be named 'aspax-xyz-handler', where 'xyz' is the file extension it refers to.
+### Developing additional plugins
+Each plugin npm should be named `aspax-xyz-handler`, where `xyz` is the file extension it refers to.
 
-Each npm should export a `compile()` method with this signature (see example [here](https://github.com/icflorescu/aspax-coffee-handler/blob/master/plugin.coffee)):
+Each plugin npm should export a `compile()` method with this signature (see example [here](https://github.com/icflorescu/aspax-coffee-handler/blob/master/plugin.coffee)):
 
 {% highlight js %}
 
@@ -150,20 +144,16 @@ In addition, you can have a look at [this demo repository](https://github.com/ic
 ## Config file syntax
 The syntax of `aspax.yml` should be quite simple and human-friendly. Here are just a few tips:
 
-### Marking assets for fingerprinting, minifying and compressing
+### Marking assets for fingerprinting, minification and compression
 Just add the appropriate **flags** after the asset file name (the order is irrelevant):
 
 {% highlight text %}
 
-            o-------------o
-          o-| fingerprint |
-          | o-------------o
-          |      o--------o
-          |  o---| minify |
-          |  |   o--------o
-          |  |     o------o
-          |  |   o-| gzip |
-          |  |   | o------o
+          o-- fingerprint
+          |  o---- minify
+          |  |   o-- gzip
+          |  |   |
+          V  V   V
           -- --- ---
 js/app.js|fp|min|gz:
   - ...
@@ -173,15 +163,15 @@ js/app.js|fp|min|gz:
 The **flags** will have no effect in development mode, but in production:
 
 - marking an asset for fingerprinting will add an UNIX timestamp like `-1387239833024` before its extension;
-- marking an asset for minifying will process it with [UglifyJS2](https://github.com/mishoo/UglifyJS2)/[CSS-optimizer](https://github.com/css/csso) and will also add `.min` before the extension;
+- marking an asset for minification will process it with [UglifyJS2](https://github.com/mishoo/UglifyJS2)/[CSS-optimizer](https://github.com/css/csso) and will also add `.min` before the extension;
 - marking an asset for compression will gzip it and also add a `.gz` suffix to its name.
 
 Notes:
 
-- fingerprinting and compressing will work for anything, while minifying only makes sense for JS and CSS files;
+- fingerprinting and compression will work for anything, while minification only makes sense for JS and CSS files;
 - there's no point, of course, in trying to compress already compressed formats such as `.jpg`, `.png` or `.eot`.
 
-### Source handler flags
+### Plugin flags
 Some source-handling plugins are also accepting **flags** (i.e. `bare` for CoffeeScript files). Use the same syntax:
 
 {% highlight text %}
@@ -191,7 +181,7 @@ Some source-handling plugins are also accepting **flags** (i.e. `bare` for Coffe
    | top-level function  |--o
    | safety wrapper      |  |
    o---------------------o  |
-                            |
+                            V
   - ...                   ----
   - scripts/source.coffee|bare
   - ...
@@ -203,5 +193,5 @@ Some source-handling plugins are also accepting **flags** (i.e. `bare` for Coffe
 ### What's the meaning of the name?
 **AS**set **PA**ckager, and **X** because ASPAX is an evolution of [ASPA](http://github.com/icflorescu/aspa), a similar module I've built in the past.
 
-### So why writing ASPAX instead of just updating [ASPA](http://github.com/icflorescu/aspa)?
-ASPAX brings in some breaking changes by simplifying the YML file syntax and introducing a plugin system to handle various source files. Simply upgrading [ASPA](http://github.com/icflorescu/aspa) wouldn't be possible without annoying the happiness of too many users.
+### So why writing ASPAX instead of just updating ASPA?
+ASPAX brings in some breaking changes by simplifying the YML file syntax and introducing a plugin system to handle various source files. Simply updating ASPA wouldn't have been possible without annoying the happiness of too many users.
