@@ -23,21 +23,18 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
-.icon-plugins:before {
+.icon-linux:before {
 	content: "\e600";
 }
-.icon-top:before {
+.icon-osx:before {
 	content: "\e601";
 }
-.icon-linux:before {
+.icon-github:before {
 	content: "\e602";
 }
-.icon-osx:before {
+.icon-windows:before {
 	content: "\e603";
 }
-.icon-github:before {
+.icon-twitter:before {
 	content: "\e604";
-}
-.icon-tutorials:before {
-	content: "\e605";
 }

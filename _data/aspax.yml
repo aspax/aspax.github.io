@@ -1,5 +1,5 @@
-/assets/css/main.css: /assets/css/main.css
-/assets/js/main.js: /assets/js/main.js
+/assets/css/main.css: /assets/css/main.min.css
+/assets/js/main.js: /assets/js/main.min.js
 /assets/img/logo.png: /assets/img/logo.png
 /assets/img/asphalt.png: /assets/img/asphalt.png
 /assets/fonts/icons.eot: /assets/fonts/icons.eot

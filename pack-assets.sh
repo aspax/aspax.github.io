@@ -1,14 +1,10 @@
 cd _assets
 
 aspax                     \
-  -s aspax-sources        \
+  -s src                  \
   -d ../assets            \
   -p /assets/             \
   -o ../_data/aspax.yml   \
   pack                    \
 
 cd ..
-
-git add .
-git commit -m "autodeploy"
-git push

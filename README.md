@@ -9,8 +9,8 @@ The website is built with Jekyll and deployed/hosted as a GitHub organization pa
 You might be interested to have a look at these files:
 - `_assets/aspax-sources/aspax.yml`;
 - `watch-assets.sh`;
+- `pack-assets.sh`.
 - `start-jekyll.sh`;
-- `deploy.sh`.
 
 ## Endorsing the author
 If you find this piece of software useful, please [![endorse](https://api.coderwall.com/icflorescu/endorsecount.png)](https://coderwall.com/icflorescu) me on Coderwall!
