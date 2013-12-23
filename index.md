@@ -155,16 +155,16 @@ Just add the appropriate **flags** after the asset file name (the order is irrel
 
 {% highlight text %}
 
-            ┌─────────────┐
-          ┌─┤ fingerprint │
-          │ └─────────────┘
-          │      ┌────────┐
-          │  ┌───┤ minify │
-          │  │   └────────┘
-          │  │     ┌──────┐
-          │  │   ┌─┤ gzip │
-          │  │   │ └──────┘
-          ┴─ ┴── ┴─
+            o-------------o
+          o-| fingerprint |
+          | o-------------o
+          |      o--------o
+          |  o---| minify |
+          |  |   o--------o
+          |  |     o------o
+          |  |   o-| gzip |
+          |  |   | o------o
+          -- --- ---
 js/app.js|fp|min|gz:
   - ...
 
@@ -186,13 +186,13 @@ Some source-handling plugins are also accepting **flags** (i.e. `bare` for Coffe
 
 {% highlight text %}
 
- ┌─────────────────────┐
- │ compile without the │
- │ top-level function  ├──┐
- │ safety wrapper      │  │
- └─────────────────────┘  │
-                          │
-- ...                   ──┴─
+ ┌---------------------o
+ | compile without the |
+ | top-level function  |--o
+ | safety wrapper      |  |
+ o---------------------o  |
+                          |
+- ...                   ----
 - scripts/source.coffee|bare
 - ...
 
