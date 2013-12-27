@@ -61,19 +61,19 @@
 		{
 			"icon": {
 				"paths": [
-					"M0.35 512l-0.35-312.074 384-52.144v364.218zM448 138.482l511.872-74.482v448h-511.872zM959.998 576l-0.126 448-511.872-72.016v-375.984zM384 943.836l-383.688-52.594-0.020-315.242h383.708z"
+					"M1009.996 828.976l-301.544-301.544c-18.668-18.668-49.214-18.668-67.882 0l-22.626 22.626-184-184 302.056-302.058h-320l-142.058 142.058-14.060-14.058h-67.882v67.882l14.058 14.058-206.058 206.060 160 160 206.058-206.058 184 184-22.626 22.626c-18.668 18.668-18.668 49.214 0 67.882l301.544 301.544c18.668 18.668 49.214 18.668 67.882 0l113.136-113.136c18.67-18.666 18.67-49.214 0.002-67.882z"
 				],
 				"tags": [
-					"windows"
+					"tutorial"
 				],
 				"grid": 16
 			},
 			"properties": {
 				"order": 4,
-				"id": 411,
+				"id": 6,
 				"prevSize": 32,
 				"code": 58883,
-				"name": "windows",
+				"name": "tutorial",
 				"ligatures": ""
 			}
 		},
@@ -100,21 +100,35 @@
 	"height": 1024,
 	"metadata": {},
 	"preferences": {
-		"showGlyphs": true,
-		"showQuickUse": true,
 		"fontPref": {
 			"prefix": "icon-",
 			"metadata": {},
+			"showGlyphs": true,
 			"metrics": {
 				"emSize": 1024,
 				"baseline": 6.25,
 				"whitespace": 50
 			},
-			"resetPoint": 58880
+			"resetPoint": 58880,
+			"showQuickUse": true,
+			"quickUsageToken": false,
+			"showMetrics": true,
+			"showMetadata": false
 		},
-		"imagePref": {},
+		"imagePref": {
+			"color": 0,
+			"height": 32,
+			"columns": 16,
+			"margin": 16,
+			"png": false,
+			"sprites": true
+		},
 		"historySize": 100,
 		"showCodes": true,
-		"gridSize": 16
+		"gridSize": 16,
+		"showLiga": false,
+		"showGrid": true,
+		"showGlyphs": true,
+		"showQuickUse": true
 	}
 }

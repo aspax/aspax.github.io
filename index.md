@@ -101,7 +101,11 @@ exports.findImports = function(imports, file, callback) {
 {% endhighlight %}
 
 ## Usage
-CLI usage samples:
+The two main options are:
+- `-s, --src <source>`: Assets source folder;
+- `-d, --dst <destination>`: Assets destination folder - defaults to `public` in current folder.
+
+You can type `aspax --help` in the console for advanced usage, but here are just a few CLI usage examples:
 
 {% highlight sh %}
 
@@ -119,27 +123,8 @@ aspax -s ../client clean
 
 {% endhighlight %}
 
-Type `aspax --help` in the console to see more info:
-
-{% highlight text %}
-
-Usage: aspax -s <source> [-d <destination>] [-p <public>] [-o <aspax.json>] [watch|clean|build|pack]
-
-Options:
-
-  -h, --help               output usage information
-  -V, --version            output the version number
-  -s, --src <source>       Assets source folder
-  -d, --dst <destination>  Assets destination folder, defaults to public in current folder
-  -p, --pfx <prefix>       Assets destination prefix, defaults to /
-  -o, --out <aspax.json>   Output map in json or yml format, defaults to aspax.json in current folder
-
-{% endhighlight %}
-
 ### Using assets built and packaged by ASPAX in an Express.js application
-See [aspax-express](http://github.com/icflorescu/aspax-express) - there's a nice step-by-step guide in the project readme.
-
-In addition, you can have a look at [this demo repository](https://github.com/icflorescu/aspax-demo) to see a ready-made setup.
+See [this tutorial](/tutorial) for a nice step-by-step guide on how to use ASPAX with Express.js.
 
 ## Config file syntax
 The syntax of `aspax.yml` should be quite simple and human-friendly. Here are just a few tips:
