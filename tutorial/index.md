@@ -6,7 +6,7 @@ description: A brief step-by-step guide on how to use ASPAX with Express.js
 ## Tutorial - using ASPAX with Express.js
 Here are the quick steps on how to use ASPAX with an Express.js application:
 
-1\. Create a folder structure for your project:
+1\. Create a folder structure similar to this one for your project:
 
 {% highlight text %}
 
@@ -16,7 +16,7 @@ Here are the quick steps on how to use ASPAX with an Express.js application:
 
 {% endhighlight %}
 
-Notice: put all your asset sources in `/assets`; **don't put anything** in `/application/public`, as **it will be overwritten**!
+Notice: put all your asset sources in `/client`; **don't put anything** in `/server/public`, as **it will be overwritten**!
 
 2\. Create `/client/aspax.yml` describing your assets configuration:
 
@@ -94,13 +94,13 @@ link(rel="shortcut icon", href=asset('/favicon.png'))
 {% highlight sh %}
 
 # watch and build on-the-fly during development
-aspax -s ../assets watch
+aspax -s ../client watch
 
 # build for development
-aspax -s ../assets build
+aspax -s ../client build
 
 # pack for production (will compile, concat, minify, compress and fingerprint)
-aspax -s ../assets pack
+aspax -s ../client pack
 
 # clean everything
 aspax -s ../client clean
@@ -119,7 +119,7 @@ NODE_ENV=development nodemon -e js,json,coffee -x node
 
 # production
 #
-NODE_ENV=development node start.js
+NODE_ENV=production node start.js
 
 {% endhighlight %}
 
