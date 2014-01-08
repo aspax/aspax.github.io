@@ -73,7 +73,7 @@ require('aspax-express')(app, path.join(__dirname, 'aspax.json'));
 
 app.use app.router;
 app.get('/:page', function(req, res) {
-...
+  ...
 });
 
 {% endhighlight %}
