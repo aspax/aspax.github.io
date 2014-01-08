@@ -37,8 +37,8 @@ By looking at that file, ASPAX will:
 - compile, concatenate and copy files in development mode;
 - compile, concatenate, **minify**, **fingerprint** and copy files in production mode.
 
-## Warning!
-ASPAX is still under heavy development, so expect breaking changes during January - February 2014!
+***
+Warning - ASPAX is still under heavy development, so expect breaking changes during January 2014!
 
 ## Installation
 Most likely you'll want ASPAX installed as a global module:
