@@ -22,7 +22,7 @@ Notice: put all your asset sources in `/client`; **don't put anything** in `/ser
 
 {% highlight yaml %}
 
-js/app.js|fp|min|gz:
+js/app.js|fp|min:
   - lib/bootstrap/js/bootstrap.js
   - lib/moment.js
   - lib/jade/runtime.js
@@ -30,7 +30,7 @@ js/app.js|fp|min|gz:
   - templates/now.jade
   - scripts/index.ls|bare
 
-css/app.css|fp|min|gz:
+css/app.css|fp|min:
   - lib/bootstrap/css/bootstrap.css
   - lib/bootstrap/css/bootstrap-theme.css
   - styles/index.styl|nib
@@ -99,7 +99,7 @@ aspax -s ../client watch
 # build for development
 aspax -s ../client build
 
-# pack for production (will compile, concat, minify, compress and fingerprint)
+# pack for production (will compile, concat, minify and fingerprint)
 aspax -s ../client pack
 
 # clean everything
