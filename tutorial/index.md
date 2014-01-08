@@ -63,7 +63,6 @@ npm install aspax-styl-handler --save-dev
 
 4\. Add `require('aspax-express')(app, path.join(__dirname, 'aspax.json'))` **before handling views** in your main application script (usually `/server/app.js`):
 
-
 {% highlight js %}
 
 var express = require('express')
