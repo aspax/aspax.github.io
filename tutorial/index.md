@@ -83,7 +83,7 @@ app.get('/:page', function(req, res) {
 {% highlight jade %}
 
 //- link(rel="shortcut icon", href="/favicon.png")
-link(rel="shortcut icon", href=asset('/favicon.png'))
+link(rel="shortcut icon", href=asset('favicon.png'))
 
 {% endhighlight %}
 
