@@ -78,7 +78,7 @@ app.get('/:page', function(req, res) {
 
 {% endhighlight %}
 
-5\. Wrap the URLs in your views into `asset()` function calls:
+5\. Replace the URLs in your views with `asset()` function calls, like this:
 
 {% highlight jade %}
 
