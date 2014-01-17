@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Tutorial - using ASPAX with an Express.js application
-description: A brief step-by-step guide on how to use ASPAX with Express.js
+description: A brief step-by-step guide on how to use ASPAX with Express.js.
 ---
 ## Tutorial - using ASPAX with Express.js
 Here are the quick steps on how to use ASPAX with an Express.js application:
