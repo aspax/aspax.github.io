@@ -2,6 +2,7 @@ css/main.css: /assets/css/main.min.css
 js/main.js: /assets/js/main.min.js
 img/logo.png: /assets/img/logo.png
 img/asphalt.png: /assets/img/asphalt.png
+img/logo-docs.png: /assets/img/logo-docs.png
 img/logo-sm.png: /assets/img/logo-sm.png
 fonts/icons.eot: /assets/fonts/icons.eot
 fonts/icons.svg: /assets/fonts/icons.svg

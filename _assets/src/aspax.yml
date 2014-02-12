@@ -7,9 +7,10 @@ js/main.js|min:
   - lib/zepto.js
   - scripts/main.ls|bare
 
-img/logo.png:     images/logo.png
-img/asphalt.png:  images/asphalt.png
-img/logo-sm.png:  images/logo-social-media.png
+img/logo.png:      images/logo.png
+img/asphalt.png:   images/asphalt.png
+img/logo-docs.png: images/logo-docs.png
+img/logo-sm.png:   images/logo-social-media.png
 
 fonts/icons.eot:  lib/icomoon/fonts/icomoon.eot
 fonts/icons.svg:  lib/icomoon/fonts/icomoon.svg
