@@ -1,7 +1,7 @@
 ---
 layout: default
 title: ASPAX
-description: The simplest Node.js asset packager. Watch, compile, concatenate, minify and fingerprint all your web assets using just a simple file written in clear, human-readable YML syntax.
+description: The simple Node.js asset packager. Watch, compile, concatenate, minify and fingerprint all your web assets based on a simple, human-readable file.
 ---
 What if you could watch, compile, concatenate, minify and fingerprint all your web assets using just a simple file written in clear, human-readable YML syntax?
 
