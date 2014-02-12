@@ -177,6 +177,11 @@ Some source-handling plugins are also accepting **flags** (i.e. `bare` for Coffe
 ### So why writing ASPAX instead of just updating ASPA?
 ASPAX brings in some breaking changes by simplifying the YML file syntax and introducing a plugin system to handle various source files. Simply updating ASPA wouldn't have been possible without annoying the happiness of too many users.
 
+### How long do you plan to maintain ASPAX?
+I'm a strong advocate of open-source philosophy and I'm also using this module in my Node.js projects, so I'll do my best to keep it up to date. If you notice ASPAX has outdated depencencies, most likely there's going to be an update soon.
+
+[![Dependency Status](https://david-dm.org/icflorescu/aspax.png)](https://david-dm.org/icflorescu/aspax)
+
 ### What projects / websites are using assets packaged by ASPAX?
 To name just a few:
 
