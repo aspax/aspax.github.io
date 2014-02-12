@@ -89,9 +89,16 @@ strong
   color white
   text-shadow 0 1px 2px black
 
-a > img
+img[alt='NPM version']
+img[alt='Dependency Status']
+img[alt='endorse']
   vertical-align middle
+
+img[alt='NPM version']
+img[alt='Dependency Status']
   box-shadow 0 1px 2px rgba(black, 80%)
+  &:hover
+    box-shadow 0 2px 3px rgba(black, 80%)
 
 @import 'header'
 @import 'footer'
