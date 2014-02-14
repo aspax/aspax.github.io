@@ -11,9 +11,9 @@ js/app.js|fp|min:
   - lib/bootstrap/js/bootstrap.js
   - lib/moment.js
   - lib/jade/runtime.js
-  - scripts/namespaces.coffee|bare
+  - scripts/namespaces.coffee | bare
   - templates/item.jade
-  - scripts/index.ls|bare
+  - scripts/index.ls          | bare
 
 css/app.css|fp|min:
   - lib/bootstrap/css/bootstrap.css
@@ -132,16 +132,15 @@ The syntax of `aspax.yml` should be quite simple and human-friendly. Here are ju
 ### Marking assets for fingerprinting and minification
 Just add the appropriate **flags** after the asset file name (the order is irrelevant):
 
-{% highlight text %}
+{% highlight yaml %}
 
-          o-- fingerprint
-          |  o---- minify
-          |  |
-          |  |
-          V  V
-          -- ---
+#         o-- fingerprint
+#         |  o---- minify
+#         |  |
+#         |  |
+#         V  V
+#         -- ---
 js/app.js|fp|min:
-  - ...
 
 {% endhighlight %}
 
@@ -152,20 +151,56 @@ The **flags** will have no effect in development mode, but in production:
 
 Note: fingerprinting will work for anything, while minification only makes sense for JS and CSS files.
 
-### Plugin flags
+### Plugin options
 Some source-handling plugins are also accepting **flags** (i.e. `bare` for CoffeeScript files). Use the same syntax:
 
-{% highlight text %}
+{% highlight yaml %}
 
-   o---------------------o
-   | compile without the |
-   | top-level function  |--o
-   | safety wrapper      |  |
-   o---------------------o  |
-                            V
-  - ...                   ----
+#  o---------------------o
+#  | compile without the |
+#  | top-level function  |--o
+#  | safety wrapper      |  |
+#  o---------------------o  |
+#                           V
+#                         ----
   - scripts/source.coffee|bare
-  - ...
+
+{% endhighlight %}
+
+### Readability
+You can add any number of whitespaces around semicolons and flag separators for readability. All of the following are equivalent:
+
+- `js/app.js|fp|min:`
+- `js/app.js   |fp|min:`
+- `js/app.js   | fp | min :`
+
+You also can add comments and even format your code like this:
+
+{% highlight yaml %}
+
+# Main script
+js/app.js                             | fp | min :
+  - lib/bootstrap.js
+  - scripts/script-one.coffee | bare
+  - scripts/script-two.coffee | bare
+  - scripts/script-three.ls   | bare
+
+# Main CSS
+css/app.css                           | fp | min :
+  - lib/bootstrap.css
+  - styles/style-one.styl     | nib
+  - styles/style-two.coffee   | nib
+  - styles/style-three.ls     | nib
+
+# Images
+favicon.png            : images/favicon.png
+logo.png               : images/logo.png
+
+# Fonts
+fonts/glyphs.eot  | fp : lib/fonts/glyphicons-halflings-regular.eot
+fonts/glyphs.svg  | fp : lib/fonts/glyphicons-halflings-regular.svg
+fonts/glyphs.ttf  | fp : lib/fonts/glyphicons-halflings-regular.ttf
+fonts/glyphs.woff | fp : lib/fonts/glyphicons-halflings-regular.woff
 
 {% endhighlight %}
 
