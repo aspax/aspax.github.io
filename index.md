@@ -174,7 +174,7 @@ You can add any number of whitespaces around semicolons and flag separators for 
 - `js/app.js   |fp|min:`
 - `js/app.js   | fp | min :`
 
-You also can add comments and even format your code like this:
+You can also add comments and even format your code like this:
 
 {% highlight yaml %}
 
