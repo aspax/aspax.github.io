@@ -1,4 +1,2 @@
-<-! $
-
-# Adjust all external links to open in new windows/tabs
-$ 'a[href^="http"]' .attr 'target' '_blank'
+for el in document.query-selector-all 'a[href^="http"]'
+  el.target = '_blank'

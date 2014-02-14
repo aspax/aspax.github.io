@@ -4,7 +4,6 @@ css/main.css|min:
   - styles/main.styl
 
 js/main.js|min:
-  - lib/zepto.js
   - scripts/main.ls|bare
 
 img/logo.png:      images/logo.png
