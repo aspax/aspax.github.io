@@ -71,7 +71,6 @@ var express = require('express')
 ...
 require('aspax-express')(app, path.join(__dirname, 'aspax.json'));
 
-app.use app.router;
 app.get('/:page', function(req, res) {
   ...
 });
@@ -124,3 +123,33 @@ NODE_ENV=production node start.js
 Notice: if you're using `nodemon` in development mode, add `aspax.json` to `.nodemonignore` to avoid restarting the application whenever an asset is rebuilt.
 
 Have a look at [this demo repository](https://github.com/icflorescu/aspax-demo) to see it in action.
+
+## Advanced usage considerations
+
+1\. To improve performance and responsiveness even more, consider using a specialized static assets module such as [st](https://github.com/isaacs/st) instead of `express.static`. Since v0.4.1, [st](https://github.com/isaacs/st) is able to leverage client-side browser caching by correctly setting the appropriate `Cache-Control` header. See [this commit](https://github.com/isaacs/st/commit/811562af3dbf4b0e6919819db904f9fab2975bfd) for more info.
+
+2\. You can avoid using the additional [aspax-express](https://github.com/icflorescu/aspax-express) module by implementing your own logic to "adjust" the asset file names in production.
+
+JavaScript:
+
+{% highlight js %}
+
+var assets = require('./aspax.json');
+...
+
+app.locals.asset = function(name) {
+    return assets[name];
+};
+
+{% endhighlight %}
+
+CoffeeScript:
+
+{% highlight coffee %}
+
+assets = require './aspax.json'
+...
+
+app.locals.asset = (name) -> assets[name]
+
+{% endhighlight %}
