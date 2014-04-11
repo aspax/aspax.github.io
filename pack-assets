@@ -1,3 +1,5 @@
+#!/bin/sh
+
 cd _assets
 
 aspax                     \
@@ -5,5 +7,6 @@ aspax                     \
   -d ../assets            \
   -p /assets/             \
   -o ../_data/aspax.yml   \
+  pack                    \
 
 cd ..

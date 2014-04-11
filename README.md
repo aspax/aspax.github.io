@@ -8,9 +8,9 @@ The website is built with Jekyll and deployed/hosted as a GitHub organization pa
 
 You might be interested to have a look at these files:
 - [_assets/aspax-sources/aspax.yml](https://github.com/aspax/aspax.github.io/blob/master/_assets/src/aspax.yml);
-- [watch-assets.sh](https://github.com/aspax/aspax.github.io/blob/master/watch-assets.sh);
-- [pack-assets.sh](https://github.com/aspax/aspax.github.io/blob/master/pack-assets.sh);
-- [start-jekyll.sh](https://github.com/aspax/aspax.github.io/blob/master/start-jekyll.sh).
+- [watch-assets](https://github.com/aspax/aspax.github.io/blob/master/watch-assets);
+- [pack-assets](https://github.com/aspax/aspax.github.io/blob/master/pack-assets);
+- [start-jekyll](https://github.com/aspax/aspax.github.io/blob/master/start-jekyll).
 
 ## Endorsing the author
 If you find this piece of software useful, please [tweet about it](http://twitter.com/share?text=Checkout%20ASPAX%2C%20the%20simple%20Node.js%20asset%20packager!&url=http%3A%2F%2Faspax.github.io&hashtags=aspax&via=icflorescu) and/or [![endorse](https://api.coderwall.com/icflorescu/endorsecount.png)](https://coderwall.com/icflorescu) me on Coderwall!

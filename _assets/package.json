@@ -1,7 +1,7 @@
 {
   "description": "We're just using this to manage ASPAX source handling plugins",
   "dependencies": {
-    "aspax-styl-handler": "*",
-    "aspax-ls-handler": "*"
+    "aspax-styl-handler": "^0.8.1",
+    "aspax-ls-handler": "^0.7.2"
   }
 }
