@@ -20,12 +20,12 @@ css/app.css|fp|min:
   - lib/bootstrap/css/bootstrap-theme.css
   - styles/index.styl|nib
 
-favicon.png:             images/favicon.png
+favicon.png: images/favicon.png
 
-fonts/bs-glyphs.eot|fp:  lib/bootstrap/fonts/glyphicons-halflings-regular.eot
-fonts/bs-glyphs.svg|fp:  lib/bootstrap/fonts/glyphicons-halflings-regular.svg
-fonts/bs-glyphs.ttf|fp:  lib/bootstrap/fonts/glyphicons-halflings-regular.ttf
-fonts/bs-glyphs.woff|fp: lib/bootstrap/fonts/glyphicons-halflings-regular.woff
+fonts/bs-glyphs.eot  |fp: lib/bootstrap/fonts/glyphicons-halflings-regular.eot
+fonts/bs-glyphs.svg  |fp: lib/bootstrap/fonts/glyphicons-halflings-regular.svg
+fonts/bs-glyphs.ttf  |fp: lib/bootstrap/fonts/glyphicons-halflings-regular.ttf
+fonts/bs-glyphs.woff |fp: lib/bootstrap/fonts/glyphicons-halflings-regular.woff
 
 {% endhighlight %}
 
