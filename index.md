@@ -222,7 +222,8 @@ To name just a few:
 
 - [LeasingSH.ro](http://www.leasingsh.ro);
 - [interiordelight.ro](http://www.interiordelight.ro);
-- [aspax.github.io](http://aspax.github.io) (of course ;-).
+- A backend insurance application for [Vector24.ro](http://www.vector24.ro);
+- [aspax.github.io](http://aspax.github.io) (this very website, of course).
 
 If you think your project should be listed here, don't hesitate to [let me know](http://github.com/icflorescu) about it.
 
