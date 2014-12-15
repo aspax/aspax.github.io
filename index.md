@@ -220,9 +220,9 @@ I'm a strong advocate of open-source philosophy and I'm also using this module i
 ### What projects / websites are using assets packaged by ASPAX?
 To name just a few:
 
-- [LeasingSH.ro](http://www.leasingsh.ro);
+- [LeasingSH.ro](http://www.leasingsh.ro) - the public website and a sales pipeline management application;
 - [interiordelight.ro](http://www.interiordelight.ro);
-- A backend insurance application for [Vector24.ro](http://www.vector24.ro);
+- The insurance sales application for [vector24.ro](http://www.vector24.ro);
 - [aspax.github.io](http://aspax.github.io) (this very website, of course).
 
 If you think your project should be listed here, don't hesitate to [let me know](http://github.com/icflorescu) about it.
