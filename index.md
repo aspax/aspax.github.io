@@ -68,7 +68,7 @@ npm install aspax-coffee-handler --save-dev
 ### Available plugins
 So far, the available plugins are:
 
-- [![Project Status](https://stillmaintained.com/icflorescu/aspax-coffee-handler.png)](https://stillmaintained.com/icflorescu/aspax-coffee-handler) [![NPM version](https://badge.fury.io/js/aspax-coffee-handler.png)](http://badge.fury.io/js/aspax-coffee-handler) [aspax-coffee-handler](http://github.com/icflorescu/aspax-coffee-handler) for [CoffeeScript](http://coffeescript.org);
+- [![NPM version](https://badge.fury.io/js/aspax-coffee-handler.png)](http://badge.fury.io/js/aspax-coffee-handler) [aspax-coffee-handler](http://github.com/icflorescu/aspax-coffee-handler) for [CoffeeScript](http://coffeescript.org);
 - [![NPM version](https://badge.fury.io/js/aspax-iced-handler.png)](http://badge.fury.io/js/aspax-iced-handler) [aspax-iced-handler](http://github.com/icflorescu/aspax-iced-handler) for [IcedCoffeeScript](http://maxtaco.github.io/coffee-script);
 - [![NPM version](https://badge.fury.io/js/aspax-ls-handler.png)](http://badge.fury.io/js/aspax-ls-handler) [aspax-ls-handler](http://github.com/icflorescu/aspax-ls-handler) for [LiveScript](http://livescript.net);
 - [![NPM version](https://badge.fury.io/js/aspax-jade-handler.png)](http://badge.fury.io/js/aspax-jade-handler) [aspax-jade-handler](http://github.com/icflorescu/aspax-jade-handler) for client-side [Jade](http://jade-lang.com) templates;
