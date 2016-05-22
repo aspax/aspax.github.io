@@ -38,7 +38,7 @@ By looking at that file, ASPAX will:
 - compile, concatenate, **minify**, **fingerprint** and copy files in production mode.
 
 ## Installation
-Most likely you'll want ASPAX [![NPM version](https://badge.fury.io/js/aspax.png)](http://badge.fury.io/js/aspax) installed as a global module:
+Most likely you'll want ASPAX[![NPM version](https://img.shields.io/npm/v/aspax.svg)](https://npmjs.org/package/aspax) installed as a global module:
 
 {% highlight sh %}
 
@@ -68,12 +68,12 @@ npm install aspax-coffee-handler --save-dev
 ### Available plugins
 So far, the available plugins are:
 
-- [![NPM version](https://badge.fury.io/js/aspax-coffee-handler.png)](http://badge.fury.io/js/aspax-coffee-handler) [aspax-coffee-handler](http://github.com/icflorescu/aspax-coffee-handler) for [CoffeeScript](http://coffeescript.org);
-- [![NPM version](https://badge.fury.io/js/aspax-iced-handler.png)](http://badge.fury.io/js/aspax-iced-handler) [aspax-iced-handler](http://github.com/icflorescu/aspax-iced-handler) for [IcedCoffeeScript](http://maxtaco.github.io/coffee-script);
-- [![NPM version](https://badge.fury.io/js/aspax-ls-handler.png)](http://badge.fury.io/js/aspax-ls-handler) [aspax-ls-handler](http://github.com/icflorescu/aspax-ls-handler) for [LiveScript](http://livescript.net);
-- [![NPM version](https://badge.fury.io/js/aspax-jade-handler.png)](http://badge.fury.io/js/aspax-jade-handler) [aspax-jade-handler](http://github.com/icflorescu/aspax-jade-handler) for client-side [Jade](http://jade-lang.com) templates;
-- [![NPM version](https://badge.fury.io/js/aspax-styl-handler.png)](http://badge.fury.io/js/aspax-styl-handler) [aspax-styl-handler](http://github.com/icflorescu/aspax-styl-handler) for [Stylus](http://learnboost.github.io/stylus);
-- [![NPM version](https://badge.fury.io/js/aspax-less-handler.png)](http://badge.fury.io/js/aspax-less-handler) [aspax-less-handler](http://github.com/icflorescu/aspax-less-handler) for [LESS](http://lesscss.org).
+- [![NPM version](https://img.shields.io/npm/v/aspax-coffee-handler.svg)](https://npmjs.org/package/aspax-coffee-handler) [aspax-coffee-handler](http://github.com/icflorescu/aspax-coffee-handler) for [CoffeeScript](http://coffeescript.org);
+- [![NPM version](https://img.shields.io/npm/v/aspax-iced-handler.svg)](https://npmjs.org/package/aspax-iced-handler) [aspax-iced-handler](http://github.com/icflorescu/aspax-iced-handler) for [IcedCoffeeScript](http://maxtaco.github.io/coffee-script);
+- [![NPM version](https://img.shields.io/npm/v/aspax-ls-handler.svg)](https://npmjs.org/package/aspax-ls-handler) [aspax-ls-handler](http://github.com/icflorescu/aspax-ls-handler) for [LiveScript](http://livescript.net);
+- [![NPM version](https://img.shields.io/npm/v/aspax-jade-handler.svg)](https://npmjs.org/package/aspax-jade-handler) [aspax-jade-handler](http://github.com/icflorescu/aspax-jade-handler) for client-side [Jade](http://jade-lang.com) templates;
+- [![NPM version](https://img.shields.io/npm/v/aspax-styl-handler.svg)](https://npmjs.org/package/aspax-styl-handler) [aspax-styl-handler](http://github.com/icflorescu/aspax-styl-handler) for [Stylus](http://learnboost.github.io/stylus);
+- [![NPM version](https://img.shields.io/npm/v/aspax-less-handler.svg)](https://npmjs.org/package/aspax-less-handler) [aspax-less-handler](http://github.com/icflorescu/aspax-less-handler) for [LESS](http://lesscss.org).
 
 If you need something else, please let me know and maybe I can do it, or better yet, feel free to do it yourself and notify me so I can list it here.
 
