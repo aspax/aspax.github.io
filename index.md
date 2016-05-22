@@ -38,7 +38,7 @@ By looking at that file, ASPAX will:
 - compile, concatenate, **minify**, **fingerprint** and copy files in production mode.
 
 ## Installation
-Most likely you'll want ASPAX[![NPM version](https://img.shields.io/npm/v/aspax.svg)](https://npmjs.org/package/aspax) installed as a global module:
+Most likely you'll want ASPAX [![NPM version](https://img.shields.io/npm/v/aspax.svg)](https://npmjs.org/package/aspax) installed as a global module:
 
 {% highlight sh %}
 
