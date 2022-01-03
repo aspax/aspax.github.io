@@ -1,0 +1,75 @@
+==================================================================
+https://keybase.io/icflorescu
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://aspax.github.io
+  * I am icflorescu (https://keybase.io/icflorescu) on keybase.
+  * I have a public key with fingerprint 3573 FBCB 8F4D 6946 13D3  923F 6C94 B599 DA7D 52B8
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "012030a375d2bd46890f1b6f3c00eeabe6f71e9bf7bcbe3778afa5613f521033e6270a",
+      "fingerprint": "3573fbcb8f4d694613d3923f6c94b599da7d52b8",
+      "host": "keybase.io",
+      "key_id": "6c94b599da7d52b8",
+      "kid": "0101f6c6c8ba178ea2745b26be9b2abdd9ac03a1435d518c2216dd08c498034d15460a",
+      "uid": "81f4ec21b92302f647c6da28c2f90719",
+      "username": "icflorescu"
+    },
+    "service": {
+      "hostname": "aspax.github.io",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1641231501,
+  "expire_in": 157680000,
+  "prev": "3514b07756c4e3c940e7e5914f1f351f73ed464ea4b059b530ed83bc16099c6a",
+  "seqno": 125,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.1.13
+Comment: https://keybase.io/crypto
+
+yMN0AnicbZJ9UFRVGMZ3VRpgwNUaYQKm9CoyGjj33O+7aIuUOxNZlkrkDLVzP86F
+C7S77N0lRJj4NIJIQcgYBMnYJkFMlgyLJEH60lZGcKSBKB1yBGcY8GOAlbTOkv7X
++efMec/vec5z3nP6Q5fqgvVZtafrRwp2ntFf7G1y6YQhqmofJtrkvZhxH5YJFyeY
+JUPNaclUZcyI4YDASVwgWVomRJliOB5XgMgopITjEAoiZBQWQF5UWFESIcmynKAI
+NANIhSYATpKQIVhcwGIxRbWmQYfdoVqdyJakWVJBCk6hZIanEC+TPEEqjMRTIs3z
+ssDKNCFySJhu0/wKFE4UNLhJtaEaWlgW4/0P/zg3DpAbI3GiAFgOCgRL0SLBiCgr
+IYiyzAsSTgqAImmZBpxEEICRZZyTKJ7DSUoGNMUs5nYt2nFAoaBEABGFxAmFoViJ
+kQUC6RQeZwHvBzXosArvQESrkpJlc0BNcmEFsRiq56gS9LfWf5dHjKDZhdxNaaoz
+3SX+dym7w+a0SbYstJnudNo1o1/s3Gv30+9C0fLIxyKqVhk1EylyoENTbVbMCBAp
+OVW/MWAoQJCAxkEsBnPtqgNaVD9BswyHo+E/B+YsPgGgRJxlaUaiIIn6iEMW0jyg
+FKCgPYUlIXpvCgqIonmRJnEoc6QoAQbneYnx90aD2VYb8iZoFFRIQ6aammYVnC4H
+xAr6elOX6fTBuicClvi/mS44aMXjzzfVtkI3WEWuEkcaQzbPBDZVJ5iOe56S7LfO
+7x6+n6J/31wVF+jGZ9fdNzkO5X3yT9Qbq5fcHMnNc9cq8aaiZ4bmXxsNamjLvqYY
+zDWlf0uOrVz5S4mm3s7v71UMD56P+7aIjvLFjN34YW3G+pzrW1am/CHI0Wsl33iX
+u/h0x3vtu97u8xzxHtZ7f7rTOhH0a8CB5xKpoSjpYNuTC7cbI9c9uCKZ7bmrQm1T
+3ujGsWdPWf6ajzmyYcjdkP9Z6f7xzBA16c3e/GyyMH5r4qvX4+s/LAn+Zo37lelb
+UydLGvglsXsMN5PequmJrhgzKKeoFrmy7Or0mrqN2X/+MvC6Gr48/oCnAI+ZtFUW
+7dL5Ur0ldGHD9taKrzuqN09Wu73NzUsfmtaHlrkebsOryq/+XhjxQVcd8fT+axel
+sOHkTwesw3E3Dh0rHqstqyuPjtjQniF0V+qbajTvF8lFXbMd/T/GpNK9l+RAcz82
+od1tNThWXvht+zLf5bPyg8668NSv7vUfHVjYFney+fPnZwyu6S+5nviao92RhRkL
+kZ4+w0LR7Y1zg/PnDpZGmL+7XGzOGSXm6y8YXw4xznZ/fO74Fd0e12pDeMDPd2d6
+lmcxLSc6Ez+6M7A7xdSQ3+JrL03A0ipPeOZeAHlh3ZX1yfpLLybt2HlW1u8YHyUG
+RsLGzMcStnhE30Snwh0+Mzf5L6J+yus=
+=wt7e
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/icflorescu
+
+==================================================================
